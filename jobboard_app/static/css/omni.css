@@ -1,0 +1,183 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    /* outline: red solid 1px; */
+}
+
+body{
+    background-color: antiquewhite;
+    width: 1000px;
+    background-image: "CD_Logo1.png"
+}
+
+.grayfont{
+    color: rgba(169, 169, 169, .7);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:visited{
+    color: black;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+h1 a{
+    text-decoration: underline black;
+}
+
+h1 a:hover{
+    text-decoration: underline wavy black;
+}
+
+#jobPosting{
+    border: rgba(169, 169, 169, .7) solid 1px;
+}
+
+#searchbar input[type="submit"]{
+    background-color: blue;
+    color: white;
+    height: 26px;
+    border-radius: 10px;
+    align-self: flex-end;
+}
+
+.footer_banner {
+    background: rgba(30,30,42,0.8);
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+
+.footer_banner .content_details {
+    margin: 0px auto;
+    padding: 40px 0px 32px;
+    position: relative;
+    width: 85%;
+}
+
+/* NAV BAR */
+
+nav{
+    /* height: 50px; */
+    border-bottom: rgba(169, 169, 169, .7) solid 1px;
+}
+
+            nav ul {
+                list-style-type: none;
+                overflow: hidden;
+                background-color: oldlace;
+            }
+
+            nav li {
+                float: left;
+            }
+
+            nav li a {
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            nav li a:hover:not(.active) {
+                background-color: lightblue;
+            }
+
+            .active {
+                background-color: darkcyan;
+                color: white;
+            }
+
+            .important{
+                float: right;
+            }
+
+/* END OF NAV BAR */
+
+
+
+
+
+/* HEADER */
+
+header{
+    display: flex;
+    height: 100px;
+    border-bottom: rgba(169, 169, 169, .7) solid 1px;
+}
+
+    #logo{
+        display: flex;
+        width: 220px;
+    }
+    #logo img{
+        width: 140px;
+    }
+    #searchbar{
+        display: flex;
+        justify-content: flex-end;
+    }
+    #searchbar a{
+        align-self: flex-end;
+        margin-left: 6px;
+    }
+
+
+
+/* END OF HEADER */
+
+main{
+    display: flex;
+
+}
+
+
+
+
+/* BOTH ASIDES */
+
+aside {
+    width: 220px;
+    height: 100vh;
+    display: inline-block;
+}
+
+/* LEFT ASIDE */
+
+#Left{
+    font-size: 10pt;
+}
+
+/* END OF LEFT ASIDE */
+
+/* RIGHT ASIDE */
+
+#Right{
+    margin-left: 40px;
+}
+
+/* END OF RIGHT ASIDE */
+
+/* END OF BOTH ASIDES */
+
+
+
+
+
+
+/* MAIN ARTICLE */
+
+article{
+    width: 520px;
+    height: 100vh;
+}
+
+/* END OF MAIN ARTICLE */

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/omni.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav>
+        <ul>
+            <li><a href="mySavedJobsTemplate">My Saved Jobs</a></li>
+            <li><a href="mysavedjobsTemplate">Profile</a></li>
+            <li><a href="">Contact Admin</a></li>
+            <li class="important"><a class="active" href="resetSessions">Log Out</a></li>
+            <li class="important"><a class="active" href="">Upload Your Resume</a></li>
+        </ul>
+    </nav>
+    <!-- END OF NAV BAR -->
+
+    <!-- HEADER -->
+    <header>
+        <div id="logo">
+            <img src="stati/images/CD_Logo1Zeke.png" alt="coding-dojo-logo">
+        </div>
+        <div id="searchbar">
+            <div>
+                <p>What</p>
+                <sub>Job title, keywords, or company</sub>
+                <form action="">
+                    <input type="search">
+                </form>
+            </div>
+            <div>
+                <p>Where</p>
+                <sub>City, state, or zip code</sub>
+                <form action="">
+                    <input type="search">
+                </form>
+            </div>
+            <input type="submit" value="Find Jobs">
+            <a href=""><span class="grayfont">Advanced Job Search</span></a>
+        </div>
+    </header>
+    <!-- END OF HEADER -->
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+
+
+        <aside id="Left">
+            <p>(Job searched for) jobs in (location)</p>
+            <br>
+            <br>
+            <p>Sort by:</p>
+            <p>relevance - date</p>
+            <br>
+            <br>
+            <p>Distance:</p>
+            <!-- SKIP THIS FOR NOW -->
+            <form action="distanceProcess">
+                <select id = "myList">
+                    <option value = "1">5 miles</option>
+                    <option value = "2">10 miles</option>
+                    <option value = "3">15 miles</option>
+                    <option value = "4">25 miles</option>
+                    <option value = "5">50 miles</option>
+                    <option value = "6">100 miles</option>
+                </select>
+            </form>
+            <!-- END OF SKIP -->
+
+
+            Salary Estimate:
+            <!-- FOR LOOP -->
+            <p><a href="salaryProcess">($80,000)</a><span class="grayfont">(HowManyJobs)</span></p>
+            <!-- END OF FOR LOOP -->
+            Job Type:
+            <!-- FOR LOOP -->
+            <p><a href="jobProcess">(JobType)</a>                   
+            <span class="grayfont">(HowManyJobs)</span></p>
+            <!-- END OF FOR LOOP -->
+            Location:
+            <!-- FOR LOOP -->
+            <p><a href="locationProcess">(Dallas, TX)</a><span class="grayfont">(HowManyJobs)</span></p>
+            <!-- END OF FOR LOOP -->
+            Company:
+            <!-- FOR LOOP -->
+            <p><a href="companyProcess">(Company DISPLAY LIKE FIRST 5 COMPANIES FOR NOW)</a><span class="grayfont">(HowManyJobs)</span></p>
+            <!-- END OF FOR LOOP -->
+            Experience Level:
+            <!-- FOR LOOP -->
+            <p><a href="experienceProcess">(Experience)</a><span class="grayfont">(HowManyJobs)</span></p>
+            <!-- END OF FOR LOOP -->
+            
+        </aside>
+
+
+
+
+
+        <article>
+            <p>Show: <a href="allJobsProcess">all jobs</a> or <a href="newestJobsProcess">newest jobs</a></p>
+            <!-- FOR LOOP -->
+            <div id="jobPosting">
+                <h1><a href="">(Job Title)</a></h1>
+                <h3>(Company Name)</h3>
+                <h5><span class="grayfont">(Location)</span></h5>
+                <a href="saveJobProcess">Save Job</a>
+            </div>
+            <!-- END OF FOR LOOP -->
+        </article>
+
+
+
+
+
+
+        <aside id="Right">
+
+        </aside>
+
+
+
+    </main>
+    <!-- END OF MAIN CONTENT -->
+
+
+</body>
+</html>

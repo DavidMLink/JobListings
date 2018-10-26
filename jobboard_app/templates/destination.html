@@ -1,0 +1,29 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Specific Job</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+        <h6> <a href="/">Home</a>  <a href="/reset">Logout</a></h6>
+
+        <h3> {{my_job.comp_loc}}  </h3>
+
+        Planned By: 
+        {{first_name_row.name}}<br>
+
+        <br><br>
+        Description: {{my_job.comp_name}}
+        <br>
+        <br><br>
+
+        Other user's joiniong applying to the job:<br>
+
+        {% for other_user in Other_Users_On_Job %}
+            {{other_user.user.name}}<br>
+        {% endfor %}
+    
+</body>
+</html>

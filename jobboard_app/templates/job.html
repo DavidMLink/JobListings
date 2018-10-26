@@ -1,0 +1,47 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Specific Job</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .container {
+            margin: 0px;
+            width: 1000px;
+            height:700px;
+            background-color:lightblue;
+        }
+    
+        table td {
+            padding: 2px;
+            border: 1px solid black;
+            border-spacing: 1px solid black;
+        }
+    
+    </style>    
+
+</head>
+<body>
+    <div class="container">
+        <h6> <a href="/">Home</a>  <a href="/reset">Logout</a></h6>
+
+        <h3> {{my_job.comp_name}}: {{my_job.job_tech}} job in {{my_job.com_loc}}  </h3>
+
+        <b>Uploaded By:</b> Recruiting Advisor: {{first_name_row.name}}<br>
+
+        <br><br>
+        <b>Description:</b> {{my_job.job_desc}}
+        <br>
+        <br><br>
+
+        Other user's that are also interested in the same job:<br>
+
+        {% for other_user in Other_Users_On_Job %}
+            {{other_user.user.name}}<br>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

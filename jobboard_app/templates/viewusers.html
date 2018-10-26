@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADMIN</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/omni.css' %}">
+</head>
+<body>
+    <!-- NAV BAR -->
+    <nav>
+        <ul>
+            <li><a href="dashboardTemplate">View Job Listings</a></li>
+            <li><a href="viewUsersTemplate">View Users</a></li>
+            <li><a href="viewAdminsTemplate">View Admins</a></li>
+            <li class="important"><a class="active" href="resetSessions">Log Out</a></li>
+        </ul>
+    </nav>
+    <!-- END OF NAV BAR -->
+
+    <table>
+        <thead>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Created At</td>
+        </thead>
+        <tbody>
+            <!-- FOR LOOP -->
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <!-- END OF FOR LOOP -->
+        </tbody>
+    </table>
+
+
+</body>
+</html>

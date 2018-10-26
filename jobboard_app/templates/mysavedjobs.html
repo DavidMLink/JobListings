@@ -1,0 +1,99 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Saved Jobs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .container {
+        margin: 0px;
+        width: 1000px;
+        height:700px;
+        background-color:lightblue;
+    }
+
+    table td {
+        padding: 2px;
+        border: 1px solid black;
+        border-spacing: 1px solid black;
+    }
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <h6> <a href="/">Home</a></h6>
+        <h6> <a href="resetSessions">Logout</a></h6>
+
+        Hello, {{request.session.name}}<br><br>
+
+        Your saved jobs:
+    
+        <table>
+            <thead>
+                <td>Job Added By</td>
+                <td>Company Name</td>
+                <td>Location</td>
+                <td>Job Desc</td>
+                <td>Job Tech</td>
+                <td>POC Name</td>
+                <td>POC Email</td>
+                <td>Action</td>
+            </thead>
+            {% for job in jobs %}
+                {% ifequal request.session.id job.added_by_id %}    
+                <tr>
+                    <td>{{job.added_by.name}} </td>
+                    <td><a href="http://www.{{job.comp_name}}.com">{{job.comp_name}}</a></td>
+                    <td>
+                        <a href="https://www.google.com/maps/place/{{job.comp_loc}}">{{job.comp_loc}}</a>
+                    </td>
+                    <td><a href="/dashboard/job/{{job.id}}"> {{job.job_desc}}</a></td>
+
+                    <td>{{job.job_tech}}</td>
+                    <td>{{job.POC_name}}</td>
+                    <td>{{job.POC_email}}</td>
+                    <td></td>
+                {% endifequal %}
+                
+                </tr>
+            {% endfor %}
+    
+            {% for savedjob in savedjobs %}
+                <tr>
+                    <td>{{savedjob.job.added_by.name}} </td>
+                    <td><a href="http://www.{{savedjob.job.comp_name}}.com">{{savedjob.job.comp_name}}</a></td>
+                    <td>
+                        <a href="https://www.google.com/maps/place/{{savedjob.job.comp_loc}}">{{savedjob.job.comp_loc}}</a>
+                    </td>
+                    <td>{{savedjob.job.job_desc}}</td>
+
+                    <td>{{savedjob.job.job_tech}}</td>
+                    <td>{{savedjob.job.POC_name}}</td>
+                    <td>{{savedjob.job.POC_email}}</td>
+
+                    <td> 
+                            <a href="/RemoveFromSavedlist/{{savedjob.id}}"> Remove from my Joblist</a>
+                            {% ifequal savedjob.job.added_by_user request.session.name %}
+                            This one is mine!! DELETE
+                            {% endifequal %}
+                    </td>
+        
+    
+                </tr>
+            {% endfor %}
+    
+        </table>
+    
+        <br>
+        <h6> <a href="dashboardTemplate">Go back to dashboard</a></h6>
+
+    </div>
+
+</body>
+</html>

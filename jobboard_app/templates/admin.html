@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ADMIN</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/omni.css' %}">
+</head>
+<body>
+    <!-- NAV BAR -->
+    <nav>
+        <ul>
+            <li><a href="dashboardTemplate">View Job Listings</a></li>
+            <li><a href="viewUsersTemplate">View Users</a></li>
+            <li><a href="viewAdminsTemplate">View Admins</a></li>
+            <li class="important"><a class="active" href="resetSessions">Log Out</a></li>
+        </ul>
+    </nav>
+    <!-- END OF NAV BAR -->
+
+    <h3>Add a Job</h3><br>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    
+    <form action="addJobProcess" method="POST">
+        {% csrf_token %}
+        Company Name: <input type="text" name="comp_name"><br>
+        Company Location:<input type="text" name="comp_loc"><br>
+        Job description:<input type="text" name="job_desc"><br>
+        Job Technology:<input type="text" name="job_tech"><br>
+        POC_name:<input type="text" name="POC_name"><br>
+        POC_email:<input type="text" name="POC_email"><br>
+        <button type="submit">Add Job Posting</button>
+    </form>
+
+</body>
+</html>
