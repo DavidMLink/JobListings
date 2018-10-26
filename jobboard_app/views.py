@@ -366,6 +366,12 @@ def viewUsersTemplate(request):
     }
     return render(request, "viewusers.html")
 
+def viewAdminsTemplate(request):
+    context = {
+
+    }
+    return render(request, "viewusers.html")
+
 # PROCESS
 def addJobProcess(request):
 
