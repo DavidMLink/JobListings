@@ -66,4 +66,5 @@ urlpatterns = [
         path('adminTemplate', views.adminTemplate),
         path('addJobProcess', views.addJobProcess),
         path('viewUsersTemplate', views.viewUsersTemplate),
+        path('viewAdminsTemplate', views.viewAdminsTemplate),
 ]
